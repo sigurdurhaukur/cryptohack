@@ -1,2 +1,2 @@
 # cryptohack
-my solutions and code for cryptohack.org
+my solutions and code for www.cryptohack.org
