@@ -22,13 +22,11 @@ def gcdExtended(a, b):
      
  
 
-# calculate the gcd of p and q
-gcd, x ,y = gcdExtended(e, totient)
-print(gcd, x, y)
-
-print(x % totient)
-# find d, when ed = 1 mod totient
 # calculate the modular multiplicative inverse of e
+def modular_multiplicative_inverse(a, n):
+        gcd, x ,y = gcdExtended(a, n)
+        return x % n
 
 
-print(e, "d = 1 mod", totient )
+flag = modular_multiplicative_inverse(e, totient)
+print(flag)
