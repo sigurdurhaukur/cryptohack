@@ -2,15 +2,29 @@
 # the givens
 p = 29
 ints = [14, 6, 11]
+# 14 mod 29
 
-x = 1
+a = 1
 
-# loop over each constant
+
+
+# loop over plausable quadratic residue
 for _int in ints:
     # check if it is a quadratic residue
-    for x in range(p-1):
-        # if a quadratic residue exist print it!
-        if(x ** 2 == _int % p):
-            print(x * -1, x)
+    quadratic_residue = None
+    square_roots = []
+    for a in range(p-1):
 
-        x += 1
+        # if it's a quadratic residue, calculate it's roots
+        if(a**2  % p == _int % p):
+            quadratic_residue = _int
+            square_roots.append(a)  
+
+        # if both square roots are found stop calculating 
+        if(len(square_roots) == 2):
+            print("quadratic residue: ", quadratic_residue)
+            print("square roots: ", square_roots)
+            print("\nsolution: ", min(square_roots))
+            break
+
+        a += 1
